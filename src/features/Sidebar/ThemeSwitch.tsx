@@ -9,7 +9,7 @@ const ThemeSwitch = () => {
     const { theme, setTheme } = useTheme();
 
     return (
-        <div className="flex items-center gap-3 p-2 rounded-md">
+        <div className="flex items-center gap-3 rounded-md">
             {expanded && (
                 <span className="text-sm text-sid-bar-secondary-text overflow-hidden transition-all whitespace-nowrap ">
                     {theme === "light" ? "Light" : "Dark"} Mode

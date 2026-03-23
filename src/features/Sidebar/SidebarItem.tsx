@@ -11,7 +11,7 @@ export function SidebarItem({ icon, text, active }: { icon: React.ReactNode; tex
       {
         "bg-sid-bar-active-bg ": active,
         "border-l-4 border-primary": active && expanded,
-        "justify-center gap-0": !expanded,
+        "gap-0 justify-center ": !expanded,
       })}>
 
       <div className="shrink-0 flex items-center justify-center">
@@ -20,7 +20,7 @@ export function SidebarItem({ icon, text, active }: { icon: React.ReactNode; tex
 
       <span
         className={cn(
-          "overflow-hidden transition-all whitespace-nowrap text-basic",
+          "overflow-hidden whitespace-nowrap text-basic",
           expanded ? "w-auto opacity-100" : "w-0 opacity-0"
         )}>
         {text}
