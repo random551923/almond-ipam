@@ -5,7 +5,7 @@ function App() {
   return (
     <div className='flex'>
       <Sidebar />
-      <main className='w-full h-screen px-12 py-10 main-bg'>
+      <main className='w-full h-screen px-12 py-10 app-bg'>
         <Outlet />
       </main>
     </div>
