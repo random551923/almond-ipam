@@ -1,4 +1,3 @@
-import './App.css'
 import Sidebar from './features/Sidebar';
 
 
@@ -6,8 +5,7 @@ function App() {
   return (
     <div className='flex'>
       <Sidebar />
-      <main className='w-full h-full px-12 py-10'>
-
+      <main className='w-full h-screen px-12 py-10 main-bg'>
         <h1 className="text-3xl font-bold text-address-free mb-2">
           Hello Tailwind World!
         </h1>

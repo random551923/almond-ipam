@@ -42,7 +42,7 @@
         /* SidBar colors */
         --color-sid-bar-bg: #FFFFFF;
         --color-sid-bar-primary-text: #1F2937;
-        --color-sid-bar-secondary-text: #6B7280; 
+        --color-sid-bar-secondary-text: #6B7280;
         --color-sid-bar-active-bg: rgba(255, 243, 232, 0.8);
         --color-sid-bar-haver-bg: rgba(255, 243, 232, 0.5);
     }
@@ -61,7 +61,15 @@
         --color-sid-bar-bg: #1F2937;
         --color-sid-bar-primary-text: #FFFFFF;
         --color-sid-bar-secondary-text: #CCCCCC;
-        
+
 
     }
+}
+
+.main-bg {
+    background: linear-gradient(50deg,
+            #FFAF42 2%,
+            #FB7185 40%,
+            #FB7185 100%
+        );
 }
