@@ -6,7 +6,7 @@ function App() {
   return (
     <div className='flex'>
       <Sidebar />
-      <main className='w-full h-full'>
+      <main className='w-full h-full px-12 py-10'>
 
         <h1 className="text-3xl font-bold text-address-free mb-2">
           Hello Tailwind World!
