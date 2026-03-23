@@ -17,12 +17,12 @@ const SidebarItem = ({ icon, text, link }: SidebarItemProps) => {
     <NavLink to={link}>
       {({ isActive }) => (
         <li className={cn(
-          "relative flex items-center border-l-4 border-transparent p-4 my-2 text-md cursor-pointer rounded-md transition-all duration-500 text-sid-bar-primary-text hover:bg-sid-bar-haver-bg justify-start",
+          "relative flex items-center border-transparent p-4 my-2 text-md cursor-pointer rounded-md transition-all duration-500 text-sid-bar-primary-text hover:bg-sid-bar-haver-bg justify-start",
           {
             "bg-sid-bar-active-bg ": isActive,
             "border-primary ": isActive && expanded,
-            "gap-0 justify-center ": !expanded,
-            "gap-3 justify-start ": expanded
+            "gap-0 justify-center border-0": !expanded,
+            "gap-3 justify-start border-l-4 ": expanded
           })}>
 
           <div className="shrink-0 flex items-center justify-center">
