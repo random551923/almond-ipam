@@ -1,7 +1,7 @@
 import Sidebar from '../features/Sidebar';
 import { Outlet } from 'react-router-dom';
 
-function App() {
+const AppLayout = () => {
   return (
     <div className='flex'>
       <Sidebar />
@@ -10,8 +10,8 @@ function App() {
       </main>
     </div>
   );
-}
+};
 
 
 
-export default App
+export default AppLayout;
