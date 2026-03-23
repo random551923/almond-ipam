@@ -2,6 +2,7 @@ import { Switch } from "radix-ui";
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react"; 
 import { useSidebar } from "./SidebarProvider";
+import { cn } from "../../utils/cn";
 
 const ThemeSwitch = () => {
     const { expanded } = useSidebar();
@@ -18,8 +19,10 @@ const ThemeSwitch = () => {
             <Switch.Root
                 checked={theme === "light"}
                 onCheckedChange={(checked) => setTheme(checked ? "light" : "dark")}
-                className="text-primary h-7 w-12 rounded-full bg-slate-200 duration-500  data-[state=checked]:bg-primary ">
-                <Switch.Thumb className="flex h-6 w-6 items-center justify-center rounded-full bg-container-bg-basic translate-x-0.5 duration-500 will-change-transform data-[state=checked]:translate-x-[21px]">
+                className={cn("text-primary h-7 rounded-full bg-slate-200 duration-500  data-[state=checked]:bg-primary",
+                    expanded ? "w-14": " w-10" )}>
+                <Switch.Thumb className={cn("flex h-6 w-6 items-center justify-center rounded-full bg-container-bg-basic translate-x-0.5 duration-500 will-change-transform",
+                     expanded ? "data-[state=checked]:translate-x-[30px]": "data-[state=checked]:translate-x-[14px]" )}>
                     {theme === "light" ?
                         (<Sun className="size-4 fill-primary" />) :
                         (<Moon className="size-4 fill-primary" />)
