@@ -7,8 +7,7 @@ export function SidebarItem({ icon, text, active }: { icon: React.ReactNode; tex
 
   return (
     <li className={cn(
-      "relative flex items-center p-4 my-2 gap-3 font-medium cursor-pointer rounded-md transition-all duration-500",
-      "text-sid-bar-primary-text hover:bg-sid-bar-haver-bg justify-start",
+      "relative flex items-center p-4 my-2 gap-3 font-medium cursor-pointer rounded-md transition-all duration-500 text-sid-bar-primary-text hover:bg-sid-bar-haver-bg justify-start",
       {
         "bg-sid-bar-active-bg ": active,
         "border-l-4 border-primary": active && expanded,

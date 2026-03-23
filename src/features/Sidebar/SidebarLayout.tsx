@@ -10,7 +10,12 @@ const SidebarLayout = ({ children }: { children: React.ReactNode }) => {
     const { expanded, toggleSwitch } = useSidebar();
 
     return (
-        <aside className="flex flex-col h-screen bg-sid-bar-bg shadow-md">
+        <aside className=" relative flex flex-col h-screen bg-sid-bar-bg shadow-md">
+            <button
+                onClick={toggleSwitch}
+                className="p-1.5 absolute top-[70%] -right-3 z-100 rounded-full text-primary-text bg-primary shadow-md hover:bg-primary-light flex items-center justify-center transition-transform transform-gpu hover:scale-110">
+                {expanded ? <ChevronLeft size={15} /> : <ChevronRight size={15} />}
+            </button>
             <div className="m-4 my-6 flex justify-center items-center min-w-max">
                 <Logo expanded={expanded} />
             </div>
@@ -20,11 +25,6 @@ const SidebarLayout = ({ children }: { children: React.ReactNode }) => {
             </nav>
 
             <div className={cn("p-2 flex flex-col", expanded ? "items-start" : "items-center")}>
-                <button
-                    onClick={toggleSwitch}
-                    className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100">
-                    {expanded ? <ChevronLeft /> : <ChevronRight />}
-                </button>
                 <LogoutButton />
                 <ThemeSwitch />
             </div>
