@@ -5,12 +5,19 @@ import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import SubnetsPage from "./pages/SubnetsPage";
 import AboutPage from "./pages/AboutPage";
+import BaseLayout from "./layouts/BaseLayout";
 
 const router = createBrowserRouter([
     // Pages Without Sidebar
+
     {
-        path: "/",
-        element: <LandingPage />,
+        element: <BaseLayout />,
+        errorElement: <NotFoundPage />,
+        children: [
+            {
+                path: "/",
+                element: <LandingPage />,
+            },]
     },
 
     // Pages With Sidebar
