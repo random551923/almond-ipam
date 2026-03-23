@@ -8,9 +8,12 @@ import ExpandButton from "./ExpandButton";
 
 const SidebarLayout = ({ children }: { children: React.ReactNode }) => {
     const { expanded } = useSidebar();
-
+  {/* <aside className="relative flex flex-col h-screen bg-sid-bar-bg shadow-md"> */}
     return (
-        <aside className="relative flex flex-col h-screen bg-sid-bar-bg shadow-md">
+      
+        <aside className={cn(
+            "relative flex flex-col h-screen bg-sid-bar-bg shadow-md transition-all duration-500 ease-in-out",
+            expanded ? "min-w-52" : "min-w-16" )}>
             <ExpandButton />
             <div className="my-6 flex justify-center items-center w-full">
                 <Logo expanded={expanded} />
