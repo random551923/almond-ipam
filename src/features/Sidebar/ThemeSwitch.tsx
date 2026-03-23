@@ -1,11 +1,10 @@
 import { Switch } from "radix-ui";
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react"; 
-import { SidebarContext } from "./SidebarContext";
-import { useContext } from "react";
+import { useSidebar } from "./SidebarProvider";
 
 const ThemeSwitch = () => {
-    const { expanded } = useContext(SidebarContext);
+    const { expanded } = useSidebar();
     const { theme, setTheme } = useTheme();
 
     return (

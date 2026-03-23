@@ -1,10 +1,9 @@
 import { LogOut } from "lucide-react";
 import { cn } from "../../utils/cn";
-import { useContext } from "react";
-import { SidebarContext } from "./SidebarContext";
+import { useSidebar } from "./SidebarProvider";
 
 const LogoutButton = () => {
-    const { expanded } = useContext(SidebarContext);
+    const { expanded } = useSidebar();
     return (
         <button className="flex p-2 rounded-md items-center gap-3 text-sid-bar-secondary-text hover:bg-sid-bar-haver-bg">
             

@@ -1,9 +1,8 @@
-import { useContext } from "react";
-import { SidebarContext } from "./SidebarContext";
 import { cn } from "../../utils/cn";
+import { useSidebar } from "./SidebarProvider";
 
 export function SidebarItem({ icon, text, active }: { icon: React.ReactNode; text: string; active?: boolean }) {
-  const { expanded } = useContext(SidebarContext);
+  const { expanded } = useSidebar();
 
 
   return (
