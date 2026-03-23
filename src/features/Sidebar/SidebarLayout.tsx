@@ -11,8 +11,8 @@ const SidebarLayout = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <aside className="relative flex flex-col h-screen bg-sid-bar-bg shadow-md">
-            <ExpandButton/>
-            <div className="my-6 flex justify-center items-center min-w-max">
+            <ExpandButton />
+            <div className="my-6 flex justify-center items-center w-full">
                 <Logo expanded={expanded} />
             </div>
 
@@ -20,7 +20,7 @@ const SidebarLayout = ({ children }: { children: React.ReactNode }) => {
                 <ul>{children}</ul>
             </nav>
 
-            <div className={cn("py-4 gap-3 flex flex-col", expanded ? "items-start px-4" : "items-center")}>
+            <div className={cn("py-4 gap-2 flex flex-col", expanded ? "items-start px-3" : "items-center")}>
                 <LogoutButton />
                 <ThemeSwitch />
             </div>
