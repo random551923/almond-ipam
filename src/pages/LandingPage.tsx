@@ -9,6 +9,9 @@ const LandingPage = () => {
                 System Theme Text
             </h1>
             <h1 className="text-status-info">This text is primary.200</h1>
+            <div>
+                AboutPage
+            </div>
         </>
     );
 };

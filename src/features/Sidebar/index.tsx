@@ -1,18 +1,31 @@
-import { BookOpenText, Home, Network } from "lucide-react";
-import SidebarItem from "./SidebarItem";
-import SidebarLayout from "./SidebarLayout";
-import { SidebarProvider } from "./SidebarProvider";
+import Logo from "../../components/Logo";
+import { cn } from "../../utils/cn";
+import ThemeSwitch from "./ThemeSwitch";
+import LogoutButton from "./LogoutButton";
+import {useSidebar } from "./SidebarProvider";
+import type React from "react";
+import ExpandButton from "./ExpandButton";
 
-
-const Sidebar = () => {
+const Sidebar = ({ children }: { children: React.ReactNode }) => {
+    const { expanded } = useSidebar();
     return (
-        <SidebarProvider>
-            <SidebarLayout>
-                <SidebarItem icon={<Home size={20} />} text="Home" link="/home" />
-                <SidebarItem icon={<Network size={20} />} text="Subnets" link="/subnets" />
-                <SidebarItem icon={<BookOpenText size={20} />} text="About" link="/about" />
-            </SidebarLayout>
-        </SidebarProvider>
+        <aside className={cn(
+            "relative flex flex-col bg-sid-bar-bg shadow-md transition-all duration-500 ease-in-out",
+            expanded ? "min-w-52" : "min-w-16" )}>
+            <ExpandButton />
+            <div className="my-6 flex justify-center items-center w-full">
+                <Logo expanded={expanded} />
+            </div>
+
+            <nav className="flex-1 mt-5 px-1">
+                <ul>{children}</ul>
+            </nav>
+
+            <div className={cn("py-4 gap-2 flex flex-col", expanded ? "items-start px-3" : "items-center")}>
+                <LogoutButton />
+                <ThemeSwitch />
+            </div>
+        </aside>
     );
 }
 

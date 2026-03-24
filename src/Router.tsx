@@ -1,14 +1,14 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
-import MainLayout from "./layouts/AppLayout";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import SubnetsPage from "./pages/SubnetsPage";
 import AboutPage from "./pages/AboutPage";
 import BaseLayout from "./layouts/BaseLayout";
+import SidebarLayout from "./layouts/SidebarLayout";
 
 const router = createBrowserRouter([
-    // Pages Without Sidebar
+    // Public routes - without auth and sidebar
 
     {
         element: <BaseLayout />,
@@ -20,10 +20,10 @@ const router = createBrowserRouter([
             },]
     },
 
-    // Pages With Sidebar
+    // Protected routes - with auth and sidebar
     {
         path: '/',
-        element: <MainLayout />,
+        element: <SidebarLayout />,
         errorElement: <NotFoundPage />,
         children: [
             {
