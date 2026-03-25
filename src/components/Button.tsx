@@ -12,7 +12,7 @@ export const Button = ({className, variant = 'primary',  asChild = false, ...pro
     const Comp = asChild ? Slot : "button";
     const buttonStyle = {
         primary: "bg-container-bg-basic text-primary",
-        secondary: "border-2 border-primary-text bg-transparent text-primary-text"
+        secondary: "border-2 border-container-bg-basic bg-transparent text-container-bg-basic"
     };
 
     return (
