@@ -14,7 +14,7 @@ const ErrorPage = () => {
                       <NavLink to="/home">{"<- Back To Home"}</NavLink></Button>
                 </div>
             </div>
-            <img className="w-full w-72 " src={'/src/assets/scared-almond.png'} />
+            <img className="w-72" src={'/src/assets/scared-almond.png'} />
         </div>
     );
 };

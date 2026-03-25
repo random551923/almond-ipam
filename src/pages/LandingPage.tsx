@@ -15,7 +15,7 @@ const LandingPage = () => {
                     <Button asChild variant="secondary"><NavLink to="/about">Learn More</NavLink></Button>
                 </div>
             </div>
-            <img className="w-full w-72 " src={'/src/assets/happy-almond.png'} />
+            <img className="w-72" src={'/src/assets/happy-almond.png'} />
         </div>
     );
 };
