@@ -7,6 +7,7 @@ import AboutPage from "./pages/AboutPage";
 import BaseLayout from "./layouts/BaseLayout";
 import SidebarLayout from "./layouts/SidebarLayout";
 import ErrorPage from "./pages/ErrorPage";
+import LoginPage from './pages/LoginPage';
 
 const router = createBrowserRouter([
     // Public routes - without auth and sidebar
@@ -19,13 +20,18 @@ const router = createBrowserRouter([
         ),
         children: [
             {
+                path: "*",
+                element: <NotFoundPage />,
+            },
+            {
                 path: "/",
                 element: <LandingPage />,
             },
             {
-                path: "*",
-                element: <NotFoundPage />,
+                path: "/login",
+                element: <LoginPage />,
             },
+            
         ]
     },
 
