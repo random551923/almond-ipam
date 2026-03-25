@@ -2,6 +2,7 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import { Button } from "../components/Button";
 import Container from "../components/Container";
 import Input from "../components/Input";
+import { required } from "zod/v4-mini";
 
 
 type logInFormSchemaType = {
@@ -11,7 +12,7 @@ type logInFormSchemaType = {
 
 
 const LoginPage = () => {
-    const {register, handleSubmit, formState:{errors} } = useForm<logInFormSchemaType>();
+    const form = useForm<logInFormSchemaType>();
 
     const onSubmit: SubmitHandler<logInFormSchemaType> = (data) => {
         console.log(data);
@@ -24,11 +25,17 @@ const LoginPage = () => {
                     <h1 className="text-3xl text-sid-bar-primary-text ">Log In</h1>
                     <p className="text-primary">Welcome back! Please enter your details</p>
                 </div>
-                <form className="flex flex-col w-96 gap-4 py-6" onSubmit={handleSubmit(onSubmit)}>
-                    <Input  {...register("userName", )} 
-                         label='Username' placeholder='Enter User Name....' />
-                    <Input {...register("password")} label='Password' type="password" placeholder='Enter User Pass....' />
-                    <Button type="submit" variant="form" className="w-full hover:bg-primary-light">Submit</Button>
+                <form className="flex flex-col w-96 gap-4 py-6">
+                    <Input  {...form.register("userName", { required: "Input is required" })} error={form.formState.errors.userName?.message}
+                        label='Username' placeholder='Enter User Name....' />
+                    <Input {...form.register("password", { required: "Input is required" })} error={form.formState.errors.password?.message}
+                        label='Password' type="password" placeholder='Enter User Pass....' />
+
+                    <Button type="submit" variant="form" onClick={form.handleSubmit(onSubmit)}
+                        className="w-full hover:bg-primary-light">
+                        {form.formState.isSubmitting ? 'Loading...' : 'Log In'}
+                    </Button>
+                    {form.formState.errors.root && <span className="text-sm text-status-error text-center">{form.formState.errors.root.message}</span>}
                 </form>
             </Container>
         </div>
