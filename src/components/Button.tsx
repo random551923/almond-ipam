@@ -1,6 +1,7 @@
 import { Slot } from "@radix-ui/react-slot";
 import { cn } from "../utils/cn";
 
+// Extend the button element's interface to include props
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: 'primary' | 'secondary';
     asChild?: boolean;
