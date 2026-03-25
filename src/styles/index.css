@@ -45,6 +45,10 @@
         --color-sid-bar-secondary-text: #6B7280;
         --color-sid-bar-active-bg: rgba(255, 243, 232, 0.8);
         --color-sid-bar-haver-bg: rgba(255, 243, 232, 0.5);
+
+        /* Form colors */
+        --color-form-bg: #FFFFFF;
+        --color-form-primary-text: #1F2937;
     }
 
 
@@ -62,7 +66,9 @@
         --color-sid-bar-primary-text: #FFFFFF;
         --color-sid-bar-secondary-text: #CCCCCC;
 
-
+        /* Form colors */
+        --color-form-bg: #1F2937;
+        --color-form-primary-text: #FFFFFF;
     }
 }
 

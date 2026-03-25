@@ -40,6 +40,10 @@ export default {
           'active-bg': "var(--color-sid-bar-active-bg)",
           'haver-bg': "var(--color-sid-bar-haver-bg)"
         },
+        form: {
+          bg: "var(--color-form-bg)",
+          "primary-text": "var(--color-form-primary-text)",
+        },
       },
     },
   },
