@@ -6,12 +6,17 @@ import SubnetsPage from "./pages/SubnetsPage";
 import AboutPage from "./pages/AboutPage";
 import BaseLayout from "./layouts/BaseLayout";
 import SidebarLayout from "./layouts/SidebarLayout";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
     // Public routes - without auth and sidebar
     {
         element: <BaseLayout />,
-        errorElement: <NotFoundPage />,
+        errorElement: (
+            <BaseLayout>
+                <ErrorPage />
+            </BaseLayout>
+        ),
         children: [
             {
                 path: "/",
