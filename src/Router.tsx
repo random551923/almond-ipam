@@ -9,7 +9,6 @@ import SidebarLayout from "./layouts/SidebarLayout";
 
 const router = createBrowserRouter([
     // Public routes - without auth and sidebar
-
     {
         element: <BaseLayout />,
         errorElement: <NotFoundPage />,
@@ -17,7 +16,12 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <LandingPage />,
-            },]
+            },
+            {
+                path: "*",
+                element: <NotFoundPage />,
+            },
+        ]
     },
 
     // Protected routes - with auth and sidebar
