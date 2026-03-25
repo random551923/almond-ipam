@@ -16,7 +16,7 @@ const SidebarLayout = () => {
           <SidebarItem icon={<BookOpenText size={20} />} text="About" link="/about" />
         </Sidebar>
       </SidebarProvider>
-      <main className='flex-1 min-h-screen flex flex-col px-12 py-10 app-bg overflow-y-auto'>
+      <main className='flex-1 min-h-screen flex flex-col px-12 py-9 app-bg overflow-y-auto'>
         <Outlet />
       </main>
     </div>
