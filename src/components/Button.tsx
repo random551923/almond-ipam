@@ -11,14 +11,14 @@ export const Button = ({className, variant = 'primary',  asChild = false, ...pro
 
     const Comp = asChild ? Slot : "button";
     const buttonStyle = {
-        primary: "bg-container-bg-basic text-primary",
-        secondary: "border-2 border-container-bg-basic bg-transparent text-container-bg-basic",
-        form: "bg-primary text-primary-text",
+        primary: "bg-container-bg-basic text-primary hover:scale-105",
+        secondary: "border-2 border-container-bg-basic bg-transparent text-container-bg-basic hover:scale-105",
+        form: "bg-primary text-primary-text hover:bg-primary-light",
     };
 
     return (
         <Comp
-            className={cn("px-6 py-2.5 rounded-md whitespace-nowrap text-sm font-medium transition-transform hover:scale-105 text-center flex items-center justify-center"
+            className={cn("px-6 py-2.5 rounded-md whitespace-nowrap text-sm font-medium transition-transform text-center flex items-center justify-center"
                 , buttonStyle[variant], className)}
             {...props}
         />
