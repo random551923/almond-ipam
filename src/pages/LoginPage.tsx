@@ -2,8 +2,6 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import { Button } from "../components/Button";
 import Container from "../components/Container";
 import Input from "../components/Input";
-import { required } from "zod/v4-mini";
-
 
 type logInFormSchemaType = {
     userName: string;
