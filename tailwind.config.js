@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Inter"', 'ui-sans-serif', 'system-ui', 'sans-serif'], /* Default font */
+        sans: ['"Inter"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         logo: ['"Irish Grover"', 'cursive'],
       },
       colors: {
