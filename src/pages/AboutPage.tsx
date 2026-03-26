@@ -2,7 +2,7 @@ import Container from "../components/Container";
 
 const AboutPage = () => {
   return (
-    <Container className="flex flex-col h-full gap-1">
+    <Container className="flex flex-col h-full gap-1 text-primary-text">
       <h1 className="text-3xl font-bold mb-6">Introduction</h1>
       <p className="">
         ALMOND IP address management (IPAM) helps you effectively monitor your IP address space,
