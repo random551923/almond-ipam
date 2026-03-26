@@ -5,6 +5,7 @@ import LogoutButton from "./LogoutButton";
 import {useSidebar } from "./SidebarProvider";
 import type React from "react";
 import ExpandButton from "./ExpandButton";
+import SidebarItem from "./SidebarItem";
 
 const Sidebar = ({ children }: { children: React.ReactNode }) => {
     const { expanded } = useSidebar();
@@ -28,5 +29,7 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
         </aside>
     );
 }
+
+Sidebar.item = SidebarItem
 
 export default Sidebar;
