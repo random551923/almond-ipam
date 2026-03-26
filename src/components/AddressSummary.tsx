@@ -23,7 +23,7 @@ const AddressSummary = ({ data, totalAllocatedAddresses }: AddressSummaryProps) 
         <ul className="gap-2 flex flex-row">
           {data.map((ipType) =>
             <li key={ipType.type} className="flex items-center gap-2 text-sm">
-              <div className="w-3 h-3 rounded-[3px]" style={{ backgroundColor: `var(--color-address-${ipType.type})` }} />
+              <div className="size-[14px] rounded-[3px]" style={{ backgroundColor: `var(--color-address-${ipType.type})` }} />
               <span className="capitalize">{ipType.type}</span>
             </li>
           )}
@@ -35,17 +35,17 @@ const AddressSummary = ({ data, totalAllocatedAddresses }: AddressSummaryProps) 
 
 const AddressBarChart = ({ data }: { data: AddressData[] }) => {
   return (
-    <ResponsiveContainer width="100%" height={100}>
-      <BarChart
-        data={data}>
-        <Bar dataKey="value" radius={[5, 5, 0, 0]} shape={BarShape}>
-          <LabelList
-            dataKey="value" position="insideTop" offset={10}
-            style={{ fill: 'var(--color-primary-text)', fontSize: '12px', fontWeight: '500' }}
-          />
-        </Bar>
-      </BarChart>
-    </ResponsiveContainer>
+    <BarChart
+      style={{ width: '100%', height: '50%' }}
+      responsive
+      data={data}>
+      <Bar dataKey="value" radius={[5, 5, 0, 0]} shape={BarShape}>
+        <LabelList
+          dataKey="value" position="insideTop" offset={10}
+          style={{ fill: 'var(--color-primary-text)', fontSize: '12px', fontWeight: '500' }}
+        />
+      </Bar>
+    </BarChart>
   );
 };
 
