@@ -25,7 +25,7 @@ export default {
           dynamic: "var(--color-address-dynamic)",
           reserved: "var(--color-address-reserved)",
           allocated: "var(--color-address-allocated)",
-          "not-allocated": "var(--color-address-not-allocated)",
+          remaining: "var(--color-address-remaining)",
         },
         status: {
           info: "var(--color-status-info)",

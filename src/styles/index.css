@@ -23,7 +23,7 @@
         --color-address-dynamic: #80E0E5;
         --color-address-reserved: #FFBB4F;
         --color-address-allocated: #A6D997;
-        --color-address-not-allocated: #DFEEDB;
+        --color-address-remaining: #8baa8246;
 
         /* Text colors */
         --color-primary-text: #1F2937;
