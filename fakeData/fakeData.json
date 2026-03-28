@@ -1,0 +1,55 @@
+{
+    "20.20.20.0": {
+        "name": "test1",
+        "description": "test description",
+        "cidr": 24,
+        "ips": {
+            "20.20.20.10": {
+                "name": "test-host1",
+                "mac": "00:1B:44:11:3A:B7",
+                "type": "reserved"
+            },
+            "20.20.20.11": {
+                "name": "test-host1",
+                "mac": "00:1B:44:11:3A:B7",
+                "type": "dynamic"
+            },
+            "20.20.20.12": {
+                "name": "test-host1",
+                "mac": "00:1B:44:11:3A:B7",
+                "type": "dynamic"
+            },
+            "20.20.20.13": {
+                "name": "test-host1",
+                "mac": "00:1B:44:11:3A:B7",
+                "type": "dynamic"
+            },
+            "20.20.20.14": {
+                "name": "test-host1",
+                "mac": "00:1B:44:11:3A:B7",
+                "type": "reserved"
+            },
+            "20.20.20.40": {
+                "name": "test-host1",
+                "mac": "00:1B:44:11:3A:B7",
+                "type": "reserved"
+            },
+            "20.20.20.221": {
+                "name": "test-host1",
+                "mac": "00:1B:44:11:3A:B7",
+                "type": "reserved"
+            }
+        },
+        "free-ips": [
+            "20.20.20.3",
+            "20.20.20.4",
+            "20.20.20.5"
+        ],
+        "gateway": "20.20.20.254",
+        "dns": [
+            "20.20.20.1",
+            "20.20.20.2"
+        ],
+        "utilization": 10
+    }
+}
