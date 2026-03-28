@@ -19,14 +19,14 @@ const AddressSummary = ({ data, totalAllocatedAddresses }: AddressSummaryProps) 
   return (
     <Container className="flex flex-col gap-3 w-fit">
       <Container.title text="Address Summery" />
-      <AddressBarChart data={data} className='w-58 h-40' />
+      <AddressBarChart data={data} className='w-48 h-40' />
       <div className="text-primary-text">
         {/* <p className="text-sm ">Total Allocated Addresses: {totalAllocatedAddresses}</p> */}
-        <ul className="gap-2 flex flex-row">
+        <ul className="gap-1 flex flex-col">
           {data.map((ipType) =>
             <li key={ipType.name} className="flex items-center gap-2 text-sm">
               <div className="size-[14px] rounded-[3px]" style={{ backgroundColor: `${ipType.fill}` }} />
-              <span className="capitalize">{ipType.name}</span>
+              <span className="capitalize">{ipType.name} Addresses</span>
             </li>
           )}
         </ul>

@@ -8,18 +8,16 @@ interface TotalSubnetsProps {
 const TotalSubnets = ({ totalSubnets }: TotalSubnetsProps) => {
 
    const data = [
-        { name: 'totalSubnets', value: totalSubnets, fill: 'var(--color-primary-400)' },
+        { name: 'totalSubnets', value: totalSubnets, fill: 'var(--color-container-bg-basic)' },
     ];
 
   return (
-    <Container className="flex flex-col w-fit items-center justify-center gap-4">
-      <Container.title text="Total Subnets" />
-
-      <GuidPieChart data={data} className="size-32">
+    
+      <GuidPieChart data={data} className="size-52">
           <span className="text-xl font-bold text-primary-text"> {totalSubnets} </span>
-          <span className="text-[10px] uppercase text-secondary-text">Used</span>
+          <span className="text-[10px] uppercase text-secondary-text">Subnets</span>
       </GuidPieChart>
-    </Container>
+   
   );
 };
 

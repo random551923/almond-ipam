@@ -9,12 +9,15 @@ const HomePage = () => {
   const totalAllocatedAddresses = 13;
 
   return (
-    <div className="flex flex-col flex-wrap items-start content-start gap-6 flex-1 overflow-hidden">
-      <SubnetSummary totalSubnets={4} />
-      <SubnetSummary totalSubnets={4} />
-      <AddressSummary data={data} totalAllocatedAddresses={totalAllocatedAddresses} />
-      <AddressAvailability totalFreeAddresses={totalFreeAddresses} totalAllocatedAddresses={totalAllocatedAddresses} />
-      
+    <div className="flex flex-col h-fill w-fit overflow-hidden gap-2 justify-around">
+      <div className="w-full h-fit flex flex-row justify-around gap-2">
+        <SubnetSummary totalSubnets={4} />
+        <SubnetSummary totalSubnets={221} />
+      </div>
+      <div className=" w-fit flex flex-row gap-2">
+        <AddressSummary data={data} totalAllocatedAddresses={totalAllocatedAddresses} />
+        <AddressAvailability totalFreeAddresses={totalFreeAddresses} totalAllocatedAddresses={totalAllocatedAddresses} />
+      </div>
     </div>
   );
 };
