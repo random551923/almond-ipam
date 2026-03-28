@@ -1,10 +1,12 @@
-import { BarChart, Bar, ResponsiveContainer, Rectangle, type BarShapeProps, LabelList } from 'recharts';
+import { BarChart, Bar, LabelList } from 'recharts';
 import Container from './Container';
+import { cn } from '../utils/cn';
 
 
 interface AddressData {
-  type: string,
+  name: string,
   value: number,
+  fill: string,
 }
 
 interface AddressSummaryProps {
@@ -17,14 +19,14 @@ const AddressSummary = ({ data, totalAllocatedAddresses }: AddressSummaryProps) 
   return (
     <Container className="flex flex-col gap-3 w-fit">
       <Container.title text="Address Summery" />
-      <AddressBarChart data={data} />
+      <AddressBarChart data={data} className='w-58 h-40' />
       <div className="text-primary-text">
         {/* <p className="text-sm ">Total Allocated Addresses: {totalAllocatedAddresses}</p> */}
         <ul className="gap-2 flex flex-row">
           {data.map((ipType) =>
-            <li key={ipType.type} className="flex items-center gap-2 text-sm">
-              <div className="size-[14px] rounded-[3px]" style={{ backgroundColor: `var(--color-address-${ipType.type})` }} />
-              <span className="capitalize">{ipType.type}</span>
+            <li key={ipType.name} className="flex items-center gap-2 text-sm">
+              <div className="size-[14px] rounded-[3px]" style={{ backgroundColor: `${ipType.fill}` }} />
+              <span className="capitalize">{ipType.name}</span>
             </li>
           )}
         </ul>
@@ -33,24 +35,20 @@ const AddressSummary = ({ data, totalAllocatedAddresses }: AddressSummaryProps) 
   );
 };
 
-const AddressBarChart = ({ data }: { data: AddressData[] }) => {
+const AddressBarChart = ({ data, className }: { data: AddressData[], className?: string }) => {
   return (
-    <BarChart
-      style={{ width: '100%', height: '50%' }}
-      responsive
-      data={data}>
-      <Bar dataKey="value" radius={[5, 5, 0, 0]} shape={BarShape}>
-        <LabelList
-          dataKey="value" position="insideTop" offset={10}
-          style={{ fill: 'var(--color-primary-text)', fontSize: '12px', fontWeight: '500' }}
-        />
-      </Bar>
-    </BarChart>
+    <div className={cn('items-center',className)}>
+      <BarChart
+        width="100%" height="100%" data={data} responsive>
+        <Bar dataKey="value" radius={[5, 5, 0, 0]} >
+          <LabelList
+            dataKey="value" position="insideTop" offset={10}
+            style={{ fill: 'var(--color-primary-text)', fontSize: '12px', fontWeight: '500' }}
+          />
+        </Bar>
+      </BarChart>
+    </div>
   );
-};
-
-const BarShape = (props: BarShapeProps) => {
-  return <Rectangle key={`cell-${props.index}`} {...props} fill={`var(--color-address-${props.payload.type})`} />
 };
 
 export default AddressSummary;
