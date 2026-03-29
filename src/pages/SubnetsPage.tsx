@@ -1,5 +1,11 @@
-import { ChevronsRight, EllipsisVertical } from "lucide-react";
+import {
+  ChevronsRight,
+  EllipsisVertical,
+  ListFilterPlus,
+  Plus,
+} from "lucide-react";
 import Table from "../components/Table";
+import { Button } from "../components/Button";
 
 const SubnetPage = () => {
   const columns = [
@@ -22,24 +28,34 @@ const SubnetPage = () => {
   ];
 
   return (
-    <div className="flex flex-row h-fill w-fill flex-1 overflow-hidden gap-10">
-      <div className=" flex flex-col w-fill h-fill flex-1 justify-center p-4">
-        <h1 className="text-xl font-bold mb-4 text-center text-primary-text"></h1>
-        <Table
-          columns={columns}
-          data={tableData}
-          sort={true}
-          className="flex flex-col h-fill flex-1"
-          actions={
-            <div className="flex flex-row gap-4">
-              <EllipsisVertical />
-              <button>
+    <div className="flex flex-col h-fill w-fill flex-1 gap-5">
+      <div className="flex flex-row">
+        <div>
+          <Button className="p-2">
+            <ListFilterPlus />
+          </Button>
+        </div>
+        <div className="flex flex-1 w-fill justify-end">
+          <Button className="gap-1">
+            <Plus />
+            Create New Subnet
+          </Button>
+        </div>
+      </div>
+      <Table
+        columns={columns}
+        data={tableData}
+        sort={true}
+        className="flex flex-col h-fill flex-1"
+        actions={
+          <div className="flex flex-row gap-4">
+            <EllipsisVertical />
+            <button>
               <ChevronsRight />
             </button>
-            </div>
-          }
-        />
-      </div>
+          </div>
+        }
+      />
     </div>
   );
 };
