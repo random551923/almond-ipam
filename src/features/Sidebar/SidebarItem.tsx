@@ -17,31 +17,46 @@ const SidebarItem = ({ icon, text, link }: SidebarItemProps) => {
       {({ isActive }) => (
         <li
           className={cn(
-            "relative flex items-center border-transparent p-4 my-2 text-md cursor-pointer rounded-md transition-all duration-500 text-sid-bar-primary-text hover:bg-sid-bar-haver-bg justify-start",
+            "group relative flex items-center border-transparent p-4 my-2 text-md cursor-pointer rounded-md transition-all duration-500 text-sid-bar-primary-text hover:bg-sid-bar-haver-bg justify-start",
             {
               "bg-sid-bar-active-bg ": isActive,
               "border-primary ": isActive && expanded,
               "gap-0 justify-center border-0": !expanded,
               "gap-3 justify-start border-l-4 ": expanded,
             },
-          )}
-        >
+          )}>
           <div className="shrink-0 flex items-center justify-center">
             {icon}
           </div>
 
           <span
             className={cn(
-              "overflow-hidden whitespace-nowrap text-basic",
-              expanded ? "w-auto opacity-100" : "w-0 opacity-0",
-            )}
-          >
+              "overflow-hidden whitespace-nowrap text-basic transition-all",
+              expanded ? "w-auto opacity-100 ml-3" : "w-0 opacity-0",
+            )}>
             {text}
           </span>
+
+          {/* Show tooltip on collapsed side bar */}
+          {!expanded && (<Tooltip text={text}/>)}
         </li>
       )}
     </NavLink>
   );
 };
+
+const Tooltip = ({ text, className }: { text: string; className?: string }) => {
+  return (
+    <div
+      className={cn(
+        "absolute left-full rounded-md px-2 py-1 ml-2 bg-gray-800 text-white text-sm invisible -translate-x-3 transition-all group-hover:visible group-hover:translate-x-0 z-50 whitespace-nowrap shadow-md pointer-events-none",
+        className,
+      )}
+    >
+      {text}
+    </div>
+  );
+};
+
 
 export default SidebarItem;
