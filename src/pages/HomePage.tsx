@@ -28,7 +28,7 @@ const HomePage = () => {
   ];
 
   return (
-    <div className="flex flex-row h-fill w-fill flex-1 overflow-hidden gap-10">
+    <div className="flex flex-row h-fill w-fill flex-1 gap-10">
       <div className="flex flex-col h-fill w-fit gap-2 justify-center gap-16">
         <div className="w-full h-fit flex flex-row justify-around gap-2">
           <TotalsPieChart number={4} subTitle="Subnets" />
