@@ -18,7 +18,7 @@ export const Button = ({className, variant = 'primary',  asChild = false, ...pro
 
     return (
         <Comp
-            className={cn("px-6 py-2.5 rounded-md whitespace-nowrap text-sm font-medium transition-transform text-center flex items-center justify-center"
+            className={cn("px-4 py-2.5 rounded-md whitespace-nowrap text-sm font-medium transition-transform text-center flex items-center justify-center"
                 , buttonStyle[variant], className)}
             {...props}
         />
