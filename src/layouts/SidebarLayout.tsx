@@ -3,23 +3,29 @@ import Sidebar from "../features/Sidebar";
 import { SidebarProvider } from "../features/Sidebar/SidebarProvider";
 import { Outlet } from "react-router-dom";
 
-
-
 const SidebarLayout = () => {
   return (
-    <div className='flex'>
+    <div className="flex">
       <SidebarProvider>
         <Sidebar>
           <Sidebar.item icon={<Home size={20} />} text="Home" link="/home" />
-          <Sidebar.item icon={<Network size={20} />} text="Subnets" link="/subnets" />
-          <Sidebar.item icon={<BookOpenText size={20} />} text="About" link="/about" />
+          <Sidebar.item
+            icon={<Network size={20} />}
+            text="Subnets"
+            link="/subnets"
+          />
+          <Sidebar.item
+            icon={<BookOpenText size={20} />}
+            text="About"
+            link="/about"
+          />
         </Sidebar>
       </SidebarProvider>
-      <main className='flex-1 h-screen flex flex-col px-12 py-9 app-bg'>
+      <main className="flex-1 h-screen flex flex-col px-12 py-9 app-bg">
         <Outlet />
       </main>
     </div>
   );
-}
+};
 
 export default SidebarLayout;
