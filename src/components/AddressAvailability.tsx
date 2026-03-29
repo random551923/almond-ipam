@@ -16,10 +16,10 @@ const AddressAvailability = ({
     ];
 
     return (
-        <Container className="flex flex-col gap-4 items-center w-fit">
+        <Container className="flex flex-col items-center w-fit">
             <Container.title text="Address Availability" />
 
-            <GuidPieChart data={data} className="size-40">
+            <GuidPieChart data={data} className="size-48 flex flex-1 ">
                 <span className="text-xl font-bold text-primary-text">
                     {utilization}%
                 </span>
@@ -27,7 +27,7 @@ const AddressAvailability = ({
             </GuidPieChart>
 
             <div className="text-primary-text mt-auto">
-                <ul className="flex flex-1 flex-row justify-between gap-5">
+                <ul className="flex flex-1 flex-row justify-around gap-12">
                     {data.map((ipType) =>
                         <li key={ipType.name} >
                             <div className="flex items-center gap-2 text-sm">
