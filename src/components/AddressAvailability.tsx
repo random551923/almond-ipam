@@ -26,7 +26,7 @@ const AddressAvailability = ({
                 <span className="text-[10px] uppercase text-secondary-text">Used</span>
             </GuidPieChart>
 
-            <div className="text-primary-text mt-auto">
+            <div className="text-primary-text mt-auto mt-4">
                 <ul className="flex flex-1 flex-row justify-around gap-12">
                     {data.map((ipType) =>
                         <li key={ipType.name} >
