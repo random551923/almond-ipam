@@ -9,9 +9,9 @@ const HomePage = () => {
   const totalAllocatedAddresses = 13;
 
   const columns = [
-    { Header: "Full Address", accessor: "subnet" },
-    { Header: "Name", accessor: "name" },
-    { Header: "Usage", accessor: "usage" },
+    { Header: "NAME", accessor: "name" },
+    { Header: "SUBNET", accessor: "subnet" },
+    { Header: "USAGE", accessor: "usage" },
   ];
 
   const tableData = [
@@ -47,7 +47,7 @@ const HomePage = () => {
       </div>
       <div className=" flex flex-col w-fill flex-1 justify-center p-4">
         <h1 className="text-xl font-bold mb-4 text-center text-primary-text">
-          Top 10 Subnets By Usage{" "}
+          Top 10 Subnets By Usage
         </h1>
         <Table columns={columns} data={tableData} className="" />
       </div>
