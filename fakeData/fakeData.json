@@ -63,5 +63,42 @@
             }
         },
         "allocated_ips_precent": 70
+    },
+    "1.1.1.0": {
+        "name": "feddsf",
+        "description": "fdgfdg",
+        "geteway": "1.1.1.2",
+        "dns_servers": [],
+        "subnet_cidr": 29,
+        "allocated_ips": {
+            "1.1.1.3": {
+                "address_description": "test-host1",
+                "mac_address": "00:1B:44:11:3A:B7",
+                "type": "reserved"
+            },
+            "1.1.1.4": {
+                "address_description": "test-host1",
+                "mac_address": "00:1B:44:11:3A:B7",
+                "type": "reserved"
+            },
+            "1.1.1.5": {
+                "address_description": "test-host1",
+                "mac_address": "00:1B:44:11:3A:B7",
+                "type": "reserved"
+            },
+            "1.1.1.6": {
+                "address_description": "test-host1",
+                "mac_address": "00:1B:44:11:3A:B7",
+                "type": "reserved"
+            }
+        },
+        "free_ips": {
+            "1.1.1.1": {
+                "address_descriptio": "",
+                "mac_address": "",
+                "type": "free"
+            }
+        },
+        "allocated_ips_precent": {}
     }
 }
