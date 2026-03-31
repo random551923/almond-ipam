@@ -1,4 +1,4 @@
-{
+const data ={
     "20.20.20.0": {
         "name": "test1",
         "description": "test description",
@@ -99,6 +99,8 @@
                 "type": "free"
             }
         },
-        "allocated_ips_precent": {}
+        "allocated_ips_precent": 80
     }
 }
+
+export default data;
