@@ -37,7 +37,7 @@ const Table = ({ columns, data, className, sort, actions,}: TableProps) => {
             <tr key={rowIndex} className="">
               {columns.map((column) => (
                 <TableItem key={column.accessor}>
-                {column.accessor == "usage" ? (<UsageBar usagePercentage={row[column.accessor]} />) : (row[column.accessor])}
+                {column.accessor == "allocated_ips_precent" ? (<UsageBar usagePercentage={row[column.accessor]} />) : (row[column.accessor])}
               </TableItem>))}
               {actions && <TableItem key={"actions"}> {actions}</TableItem>}
             </tr>

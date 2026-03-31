@@ -1,4 +1,5 @@
 import data from "../../fakeData/staticData";
+import fakeData from "../../fakeData/fakeData"
 import AddressAvailability from "../components/AddressAvailability";
 import AddressSummary from "../components/AddressSummary";
 import Table from "../components/Table";
@@ -11,21 +12,23 @@ const HomePage = () => {
   const columns = [
     { Header: "NAME", accessor: "name" },
     { Header: "SUBNET", accessor: "subnet" },
-    { Header: "USAGE", accessor: "usage" },
+    { Header: "USAGE", accessor: "allocated_ips_precent" },
   ];
 
   const tableData = [
-    { subnet: "200.100.0.0/16", name: "John Doe", usage: 22 },
-    { subnet: "100.100.0.0/16", name: "Jane Smith", usage: 45 },
-    { subnet: "300.100.0.0/16", name: "Mike Johnson", usage: 71 },
-    { subnet: "300.100.0.0/16", name: "Mike Johnson", usage: 81 },
-    { subnet: "300.100.0.0/16", name: "Mike Johnson", usage: 91 },
-    { subnet: "300.100.0.0/16", name: "Mike Johnson", usage: 91 },
-    { subnet: "300.100.0.0/16", name: "Mike Johnson", usage: 91 },
-    { subnet: "300.100.0.0/16", name: "Mike Johnson", usage: 91 },
-    { subnet: "300.100.0.0/16", name: "Mike Johnson", usage: 91 },
-    { subnet: "300.100.0.0/16", name: "Mike Johnson", usage: 91 },
+    { subnet: "200.100.0.0/16", name: "John Doe", allocated_ips_precent: 22 },
+    { subnet: "100.100.0.0/16", name: "Jane Smith", allocated_ips_precent: 45 },
+    { subnet: "300.100.0.0/16", name: "Mike Johnson", allocated_ips_precent: 71 },
+    { subnet: "300.100.0.0/16", name: "Mike Johnson", allocated_ips_precent: 81 },
+    { subnet: "300.100.0.0/16", name: "Mike Johnson", allocated_ips_precent: 91 },
+    { subnet: "300.100.0.0/16", name: "Mike Johnson", allocated_ips_precent: 91 },
+    { subnet: "300.100.0.0/16", name: "Mike Johnson", allocated_ips_precent: 91 },
+    { subnet: "300.100.0.0/16", name: "Mike Johnson", allocated_ips_precent: 91 },
+    { subnet: "300.100.0.0/16", name: "Mike Johnson", allocated_ips_precent: 91 },
+    { subnet: "300.100.0.0/16", name: "Mike Johnson", allocated_ips_precent : 91 },
   ];
+
+
 
   return (
     <div className="flex flex-row h-fill w-fill flex-1 gap-10">
