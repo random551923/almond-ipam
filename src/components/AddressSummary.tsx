@@ -1,6 +1,6 @@
-import { BarChart, Bar, LabelList } from 'recharts';
+import SummeryBarChart from './charts/SummeryBarChart';
 import Container from './Container';
-import { cn } from '../utils/cn';
+
 
 
 interface AddressData {
@@ -19,7 +19,7 @@ const AddressSummary = ({ data, totalAllocatedAddresses }: AddressSummaryProps) 
   return (
     <Container className="flex flex-col gap-3 w-fit">
       <Container.title text="Address Summery" />
-      <AddressBarChart data={data} className='w-48 h-40' />
+      <SummeryBarChart data={data} className='w-48 h-40' />
       <div className="flex flex-col text-primary-text gap-4">
         
         <ul className="gap-1 flex flex-col">
@@ -36,21 +36,7 @@ const AddressSummary = ({ data, totalAllocatedAddresses }: AddressSummaryProps) 
   );
 };
 
-const AddressBarChart = ({ data, className }: { data: AddressData[], className?: string }) => {
-  return (
-    <div className={cn('items-center',className)}>
-      <BarChart
-        width="100%" height="100%" data={data} responsive>
-        <Bar dataKey="value" radius={[5, 5, 0, 0]} >
-          <LabelList
-            dataKey="value" position="insideTop" offset={10}
-            style={{ fill: 'var(--color-primary-text)', fontSize: '12px', fontWeight: '500' }}
-          />
-        </Bar>
-      </BarChart>
-    </div>
-  );
-};
+
 
 export default AddressSummary;
 
