@@ -21,7 +21,7 @@ const SidebarLayout = () => {
           />
         </Sidebar>
       </SidebarProvider>
-      <main className="flex-1 h-screen flex flex-col px-16 py-12 app-bg">
+      <main className="flex-1 h-screen flex flex-col px-16 py-12 app-bg overflow-auto">
         <Outlet />
       </main>
     </div>
