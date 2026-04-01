@@ -1,21 +1,25 @@
 import { ChevronsUpDown } from "lucide-react";
 import { cn } from "../utils/cn";
 import UsageBar from "./UsageBar";
-import { Children } from "react";
+
+interface Column {
+  Header: string;
+  accessor: string;
+}
 
 interface TableProps {
-  columns: any;
-  data: any;
-  className: string;
-  sort?: boolean;
-  actions?: React.ReactNode;
+  columns: Column[]
+  data: any[],
+  className?: string,
+  sort?: boolean,
+  actions?: React.ReactNode,
 }
 
 const Table = ({ columns, data, className, sort, actions,}: TableProps) => {
   return (
     <div
       className={cn(
-        "overflow-x-auto bg-container-bg-transparent rounded-lg",
+        "overflow-x-auto bg-container-bg-transparent rounded-lg  min-h-96",
         className,
       )}>
       <table className="w-full text-primary-text">
@@ -23,7 +27,7 @@ const Table = ({ columns, data, className, sort, actions,}: TableProps) => {
           <tr>
             {columns.map((column) => (
               <th key={column.accessor} className="py-3 px-4 text-left">
-                <div className="flex flex-row items-center gap-2">
+                <div className="flex flex-row items-center gap-2 uppercase">
                   {column.Header}
                   {sort && <ChevronsUpDown />}
                 </div>
@@ -37,7 +41,7 @@ const Table = ({ columns, data, className, sort, actions,}: TableProps) => {
             <tr key={rowIndex} className="">
               {columns.map((column) => (
                 <TableItem key={column.accessor}>
-                {column.accessor == "allocated_ips_precent" ? (<UsageBar usagePercentage={row[column.accessor]} />) : (row[column.accessor])}
+                {column.Header == "Usage" ? (<UsageBar usagePercentage={row[column.accessor]} />) : (row[column.accessor])}
               </TableItem>))}
               {actions && <TableItem key={"actions"}> {actions}</TableItem>}
             </tr>

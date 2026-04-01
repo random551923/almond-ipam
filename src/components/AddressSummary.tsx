@@ -3,25 +3,28 @@ import Container from './Container';
 
 
 
-interface AddressData {
-  name: string,
-  value: number,
-  fill: string,
-}
 
 interface AddressSummaryProps {
-  data: AddressData[],
-  totalAllocatedAddresses: number,
+  totalFreeAddresses: number,
+  totalReservedAddresses: number,
+  totalDynamicAddresses: number
 }
 
 
-const AddressSummary = ({ data, totalAllocatedAddresses }: AddressSummaryProps) => {
+const AddressSummary = ({totalFreeAddresses, totalReservedAddresses, totalDynamicAddresses }: AddressSummaryProps) => {
+
+  const data = [
+    { name: 'free', value: totalFreeAddresses, fill: 'var(--color-address-free)', },
+    { name: 'dynamic', value: totalReservedAddresses, fill: 'var(--color-address-dynamic)', },
+    { name: 'reserved', value: totalDynamicAddresses, fill: 'var(--color-address-reserved)', },
+  ];
+
   return (
     <Container className="flex flex-col gap-3 w-fit">
       <Container.title text="Address Summery" />
       <SummeryBarChart data={data} className='w-48 h-40' />
       <div className="flex flex-col text-primary-text gap-4">
-        
+
         <ul className="gap-1 flex flex-col">
           {data.map((ipType) =>
             <li key={ipType.name} className="flex items-center gap-2 text-sm">
@@ -30,7 +33,7 @@ const AddressSummary = ({ data, totalAllocatedAddresses }: AddressSummaryProps) 
             </li>
           )}
         </ul>
-        <p className="text-sm ">Total Allocated Addresses: {totalAllocatedAddresses}</p>
+       {/*  <p className="text-sm ">Total Allocated Addresses: {totalAllocatedAddresses}</p> */}
       </div>
     </Container>
   );
