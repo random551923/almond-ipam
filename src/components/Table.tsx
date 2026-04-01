@@ -52,9 +52,9 @@ const Table = ({ columns, data, className, sort, actions,}: TableProps) => {
   );
 };
 
-const TableItem = ({key, children}:{key: string, children: React.ReactNode}) => {
+const TableItem = ({children}:{children: React.ReactNode}) => {
   return (
-    <td key={key} className="flex-col py-3 px-4 border-b border-gray-300 w-fit max-w-40 truncate">
+    <td className="flex-col py-3 px-4 border-b border-gray-300 w-fit max-w-40 truncate">
       {children}
     </td>
   );
