@@ -5,8 +5,8 @@ interface addressAvailabilityProps {
     totalFreeAddresses: number,
     totalAllocatedAddresses: number,
 }
-const AddressAvailability = ({totalFreeAddresses, totalAllocatedAddresses,}: addressAvailabilityProps) => {
-    const utilization = Math.round((totalAllocatedAddresses / (totalAllocatedAddresses + totalFreeAddresses)) * 100) : 0;
+const AddressAvailability = ({ totalFreeAddresses, totalAllocatedAddresses, }: addressAvailabilityProps) => {
+    const utilization = Math.round((totalAllocatedAddresses / (totalAllocatedAddresses + totalFreeAddresses)) * 100);
 
     const data = [
         {
