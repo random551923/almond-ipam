@@ -62,7 +62,7 @@ const data ={
                 "type": "free"
             }
         },
-        "allocated_ips_precent": 70
+        "allocated_ips_percent": 70
     },
     "1.1.1.0": {
         "name": "feddsf",
@@ -99,7 +99,7 @@ const data ={
                 "type": "free"
             }
         },
-        "allocated_ips_precent": 80
+        "allocated_ips_percent": 80
     }
 }
 
