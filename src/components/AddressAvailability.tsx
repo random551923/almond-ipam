@@ -1,11 +1,11 @@
 import GuidPieChart from "./charts/GuidPieChart";
 import Container from "./Container";
 
-interface addressAvailabilityProps {
+interface AddressAvailabilityProps {
     totalFreeAddresses: number,
     totalAllocatedAddresses: number,
 }
-const AddressAvailability = ({ totalFreeAddresses, totalAllocatedAddresses, }: addressAvailabilityProps) => {
+const AddressAvailability = ({ totalFreeAddresses, totalAllocatedAddresses, }: AddressAvailabilityProps) => {
     const utilization = Math.round((totalAllocatedAddresses / (totalAllocatedAddresses + totalFreeAddresses)) * 100);
 
     const data = [
