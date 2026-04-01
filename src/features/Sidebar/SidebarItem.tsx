@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { cn } from "../../utils/cn";
 import { useSidebar } from "./SidebarProvider";
+import Tooltip from "../../components/Tooltip";
 
 interface SidebarItemProps {
   icon: React.ReactNode;
@@ -38,25 +39,15 @@ const SidebarItem = ({ icon, text, link }: SidebarItemProps) => {
           </span>
 
           {/* Show tooltip on collapsed side bar */}
-          {!expanded && (<Tooltip text={text}/>)}
+          {!expanded && (<Tooltip text={text} position="right"/>)}
         </li>
       )}
     </NavLink>
   );
 };
 
-const Tooltip = ({ text, className }: { text: string; className?: string }) => {
-  return (
-    <div
-      className={cn(
-        "absolute left-full rounded-md px-2 py-1 ml-2 bg-gray-800 text-white text-sm invisible -translate-x-3 transition-all group-hover:visible group-hover:translate-x-0 z-50 whitespace-nowrap shadow-md pointer-events-none",
-        className,
-      )}
-    >
-      {text}
-    </div>
-  );
-};
+
+
 
 
 export default SidebarItem;
