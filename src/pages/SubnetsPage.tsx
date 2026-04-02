@@ -6,26 +6,17 @@ import {
 } from "lucide-react";
 import Table from "../components/Table";
 import { Button } from "../components/Button";
+import fakeData from "../../fakeData/fakeData"
+import { formatData } from "../utils/dataUtils";
+import Tooltip from "../components/Tooltip";
 
 const SubnetPage = () => {
-  const columns = [
-    { Header: "NAME", accessor: "name" },
-    { Header: "SUBNET", accessor: "subnet" },
-    { Header: "USAGE", accessor: "usage" },
+   const columns = [
+    { Header: "Name", accessor: "name" },
+    { Header: "Subnet", accessor: "address" },
+    { Header: "Usage", accessor: "allocated_ips_percent" },
   ];
 
-  const tableData = [
-    { subnet: "200.100.0.0/16", name: "John Doe", usage: 22 },
-    { subnet: "100.100.0.0/16", name: "Jane Smith", usage: 45 },
-    { subnet: "300.100.0.0/16", name: "Mike Johnson", usage: 71 },
-    { subnet: "300.100.0.0/16", name: "Mike Johnson", usage: 81 },
-    { subnet: "300.100.0.0/16", name: "Mike Johnson", usage: 91 },
-    { subnet: "300.100.0.0/16", name: "Mike Johnson", usage: 91 },
-    { subnet: "300.100.0.0/16", name: "Mike Johnson", usage: 91 },
-    { subnet: "300.100.0.0/16", name: "Mike Johnson", usage: 91 },
-    { subnet: "300.100.0.0/16", name: "Mike Johnson", usage: 91 },
-    { subnet: "300.100.0.0/16", name: "Mike Johnson", usage: 91 },
-  ];
 
   return (
     <div className="flex flex-col h-fill w-fill flex-1 gap-5">
@@ -44,14 +35,15 @@ const SubnetPage = () => {
       </div>
       <Table
         columns={columns}
-        data={tableData}
+        data={formatData(fakeData)}
         sort={true}
         className="flex flex-col h-fill flex-1"
         actions={
           <div className="flex flex-row gap-4">
             <EllipsisVertical />
-            <button>
+            <button className="relative group inline-block">
               <ChevronsRight />
+              <Tooltip text="More..." position="left"/>
             </button>
           </div>
         }
