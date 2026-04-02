@@ -25,9 +25,9 @@ const LoginPage = () => {
                 </div>
                 <form className="flex flex-col w-96 gap-4 py-6">
                     <Input  {...form.register("userName", { required: "Input is required" })} error={form.formState.errors.userName?.message}
-                        label='Username' placeholder='Enter User Name....' />
+                        label='Username' />
                     <Input {...form.register("password", { required: "Input is required" })} error={form.formState.errors.password?.message}
-                        label='Password' type="password" placeholder='Enter User Pass....' />
+                        label='Password' type="password" />
 
                     <Button type="submit" variant="form" onClick={form.handleSubmit(onSubmit)}
                         className="w-full hover:bg-primary-light">

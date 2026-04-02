@@ -6,22 +6,36 @@ import { cn } from "../utils/cn";
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label: string;
     type?: string;
-    error?: string; 
+    error?: string;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
     ({ label, error, className, type = "text", ...props }, ref) => {
 
-        
+
         return (
-            <div className="flex flex-col gap-1">
-                <label className="text-sm text-secondary-text">{label}</label>
-                <input type={type} ref={ref}  {...props}
-                    className={cn("w-full px-3 py-2 border text-form-primary-text rounded-md shadow-sm focus:outline-none focus:border-primary", className,
-                        error ? "border-status-error" : ""
-                    )}
-                />
-                {error && <span className="text-sm text-status-error">{error}</span>}
+            <div>
+                <div className="relative">
+                    <input
+                        type={type}
+                        ref={ref}
+                        placeholder=" "
+                        {...props}
+                        className={cn(
+                            "block px-3 pb-2.5 pt-4 w-full text-sm text-form-primary-text bg-form-bg rounded-md border appearance-none focus:outline-none focus:ring-0 peer",
+                            className,
+                            error ? "border-status-error focus:border-status-error" : "border-gray-300 focus:border-primary"
+                        )}
+                    />
+                    <label className={cn(
+                        "absolute text-sm duration-300 transform bg-form-bg px-2 start-2",
+                        "peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4",
+                        error ? "text-status-error" : "text-secondary-text peer-focus:text-primary"
+                    )}>
+                        {label}
+                    </label>
+                </div>
+                {error && <p className="text-xs text-status-error mt-1.5 ml-1">{error}</p>}
             </div>
         );
     }
