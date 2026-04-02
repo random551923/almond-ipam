@@ -9,9 +9,10 @@ import { Button } from "../components/Button";
 import fakeData from "../../fakeData/fakeData"
 import { formatData } from "../utils/dataUtils";
 import Tooltip from "../components/Tooltip";
+import SearchBar from "../components/SearchBar";
 
 const SubnetPage = () => {
-   const columns = [
+  const columns = [
     { Header: "Name", accessor: "name" },
     { Header: "Subnet", accessor: "address" },
     { Header: "Usage", accessor: "allocated_ips_percent" },
@@ -19,14 +20,10 @@ const SubnetPage = () => {
 
 
   return (
-    <div className="flex flex-col h-fill w-fill flex-1 gap-5">
-      <div className="flex flex-row">
-        <div>
-          <Button className="p-2">
-            <ListFilterPlus />
-          </Button>
-        </div>
-        <div className="flex flex-1 w-fill justify-end">
+    <div className="flex flex-col h-fill w-fill flex-1 gap-5 ">
+      <div className="flex flex-row justify-around">
+        <SearchBar />
+        <div className="">
           <Button className="gap-1">
             <Plus />
             Create New Subnet
@@ -43,7 +40,7 @@ const SubnetPage = () => {
             <EllipsisVertical />
             <button className="relative group inline-block">
               <ChevronsRight />
-              <Tooltip text="More..." position="left"/>
+              <Tooltip text="More..." position="left" />
             </button>
           </div>
         }
@@ -51,4 +48,5 @@ const SubnetPage = () => {
     </div>
   );
 };
+
 export default SubnetPage;
