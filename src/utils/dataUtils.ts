@@ -19,7 +19,8 @@ interface Subnet {
 const formatData = (rowData: Record<string, Subnet>) => {
     // Added 'return' here so the function actually gives back the array
     return Object.entries(rowData).map(([address, fullSubnet]) => ({
-        address: address + "/" + fullSubnet.subnet_cidr,
+        address: address,
+        fullAddress: address + "/" + fullSubnet.subnet_cidr,
         ...fullSubnet
     }));
 };

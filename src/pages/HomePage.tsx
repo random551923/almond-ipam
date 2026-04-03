@@ -11,7 +11,7 @@ const HomePage = () => {
 
   const columns = [
     { Header: "Name", accessor: "name" },
-    { Header: "Subnet", accessor: "address" },
+    { Header: "Subnet", accessor: "fullAddress" },
     { Header: "Usage", accessor: "allocated_ips_percent" },
   ];
 

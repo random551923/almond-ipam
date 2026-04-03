@@ -1,7 +1,6 @@
 import {
   ChevronsRight,
   EllipsisVertical,
-  ListFilterPlus,
   Plus,
 } from "lucide-react";
 import Table from "../components/Table";
@@ -14,7 +13,7 @@ import SearchBar from "../components/SearchBar";
 const SubnetPage = () => {
   const columns = [
     { Header: "Name", accessor: "name" },
-    { Header: "Subnet", accessor: "address" },
+    { Header: "Subnet", accessor: "fullAddress" },
     { Header: "Usage", accessor: "allocated_ips_percent" },
   ];
 
