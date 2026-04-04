@@ -22,8 +22,8 @@ const SubnetDetailsPage = () => {
 
     return (
 
-        <div className="flex flex-col flex-1 min-w-min gap-4">
-            <div className="flex flex-row items-center justify-between">
+        <div className="flex flex-col flex-1 min-w-min gap-6">
+            <div className="flex flex-row items-center justify-between text-primary-text">
                 <Link to={`/subnets`}>
                     < ChevronsLeft />
                 </Link >
