@@ -52,4 +52,4 @@ const countTotalAddresses = (subnetsList: Subnet[]) => {
 };
 
 
-export { formatData, countTotalAddresses };
+export { formatData, countTotalAddresses, type Subnet };
