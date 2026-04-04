@@ -40,7 +40,11 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <SidebarLayout />,
-        errorElement: <NotFoundPage />,
+        errorElement: (
+            <BaseLayout>
+                <ErrorPage />
+            </BaseLayout>
+        ),
         children: [
             {
                 path: '/home',
@@ -52,7 +56,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/subnets/:subnetAddress",
-                element: <SubnetDetailsPage/>
+                element: <SubnetDetailsPage />
             },
             {
                 path: '/about',
