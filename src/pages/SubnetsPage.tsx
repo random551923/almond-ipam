@@ -2,7 +2,7 @@ import {Plus,} from "lucide-react";
 import Table from "../components/Table";
 import { Button } from "../components/Button";
 import fakeData from "../../fakeData/fakeData"
-import { formatData } from "../utils/dataUtils";
+import { formatSubnetsData } from "../utils/dataUtils";
 import SearchBar from "../components/SearchBar";
 
 const SubnetPage = () => {
@@ -26,7 +26,7 @@ const SubnetPage = () => {
       </div>
       <Table
         columns={columns}
-        data={formatData(fakeData)}
+        data={formatSubnetsData(fakeData)}
         sort={true}
         className="flex flex-col h-fill flex-1"
         /* actions={

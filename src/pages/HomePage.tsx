@@ -4,7 +4,7 @@ import AddressAvailability from "../components/AddressAvailability";
 import AddressSummary from "../components/AddressSummary";
 import Table from "../components/Table";
 import TotalsPieChart from "../components/TotalsPieChart";
-import { formatData, countTotalAddresses } from "../utils/dataUtils";
+import { formatSubnetsData, countTotalAddresses } from "../utils/dataUtils";
 
 const HomePage = () => {
 
@@ -17,7 +17,7 @@ const HomePage = () => {
 
 
 
-  const subnetsList = formatData(fakeData);
+  const subnetsList = formatSubnetsData(fakeData);
   const totalAddresses = countTotalAddresses(subnetsList)
 
 

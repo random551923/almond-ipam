@@ -16,8 +16,7 @@ interface Subnet {
 }
 
 /* Convert row data to array of subnets & format it */
-const formatData = (rowData: Record<string, Subnet>) => {
-    // Added 'return' here so the function actually gives back the array
+const formatSubnetsData = (rowData: Record<string, Subnet>) => {
     return Object.entries(rowData).map(([address, fullSubnet]) => ({
         address: address,
         fullAddress: address + "/" + fullSubnet.subnet_cidr,
@@ -52,4 +51,4 @@ const countTotalAddresses = (subnetsList: Subnet[]) => {
 };
 
 
-export { formatData, countTotalAddresses, type Subnet };
+export { formatSubnetsData, countTotalAddresses, type Subnet };
