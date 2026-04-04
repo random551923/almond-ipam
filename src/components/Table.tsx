@@ -33,7 +33,7 @@ const Table = ({ columns, data, className, sort, moreKey }: TableProps) => {
         </thead>
         <tbody className="py-4">
           {data.map((row, rowIndex) => (
-            <tr key={rowIndex}>
+            <tr key={rowIndex} className="group">
               {columns.map((column) => (
                 <TableItem key={column.accessor}>
                   {column.Header === "Usage" ?
@@ -54,7 +54,7 @@ const Table = ({ columns, data, className, sort, moreKey }: TableProps) => {
 
 const TableItem = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   return (
-    <td className={cn("py-3 px-4 border-b border-gray-300 w-fit max-w-40 ", className)}>
+    <td className={cn("py-3 px-4 border-b border-gray-300 w-fit max-w-40 group-last:border-0", className)}>
       {children}
     </td>
   );
