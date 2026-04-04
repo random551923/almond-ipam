@@ -1,6 +1,6 @@
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { Button } from "../components/Button";
-import Container from "../components/Container";
+import Card from "../components/Card";
 import Input from "../components/Input";
 
 type logInFormSchemaType = {
@@ -18,7 +18,7 @@ const LoginPage = () => {
 
     return (
         <div className="flex items-center flex-1 justify-center ">
-            <Container className="flex flex-col items-center justify-center w-fit h-fit bg-form-bg">
+            <Card className="flex flex-col items-center justify-center w-fit h-fit bg-form-bg">
                 <div className="flex flex-col items-center gap-2">
                     <h1 className="text-3xl text-sid-bar-primary-text ">Log In</h1>
                     <p className="text-primary">Welcome back! Please enter your details</p>
@@ -35,7 +35,7 @@ const LoginPage = () => {
                     </Button>
                     {form.formState.errors.root && <span className="text-sm text-status-error text-center">{form.formState.errors.root.message}</span>}
                 </form>
-            </Container>
+            </Card>
         </div>
 
     );

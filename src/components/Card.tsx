@@ -1,7 +1,7 @@
 import type React from "react";
 import { cn } from "../utils/cn";
 
-const Container = ({ children, className }: { children: React.ReactNode, className?: string }) => {
+const Card = ({ children, className }: { children: React.ReactNode, className?: string }) => {
 
   return (
     <div className={cn("p-8 bg-container-bg-transparent rounded-3xl text-sm shadow-md ", className)}>
@@ -11,13 +11,13 @@ const Container = ({ children, className }: { children: React.ReactNode, classNa
 };
 
 
-const ContainerTitle = ({ className, text }: { className?: string, text: string }) => {
+const CardTitle = ({ className, text }: { className?: string, text: string }) => {
 
   return (
     <h2 className={cn("text-center text-base font-semibold text-primary-text", className)}>{text}</h2>
   );
 };
 
-Container.title = ContainerTitle;
+Card.title = CardTitle;
 
-export default Container;
+export default Card;

@@ -1,5 +1,5 @@
 import SummeryBarChart from './charts/SummeryBarChart';
-import Container from './Container';
+import Card from './Card';
 
 
 
@@ -20,8 +20,8 @@ const AddressSummary = ({totalFreeAddresses, totalReservedAddresses, totalDynami
   ];
 
   return (
-    <Container className="flex flex-col gap-3 w-fit">
-      <Container.title text="Address Summery" />
+    <Card className="flex flex-col gap-3 w-fit">
+      <Card.title text="Address Summery" />
       <SummeryBarChart data={data} className='w-48 h-40' />
       <div className="flex flex-col text-primary-text gap-4">
 
@@ -35,7 +35,7 @@ const AddressSummary = ({totalFreeAddresses, totalReservedAddresses, totalDynami
         </ul>
        {/*  <p className="text-sm ">Total Allocated Addresses: {totalAllocatedAddresses}</p> */}
       </div>
-    </Container>
+    </Card>
   );
 };
 

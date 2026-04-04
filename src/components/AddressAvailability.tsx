@@ -1,5 +1,5 @@
 import GuidPieChart from "./charts/GuidPieChart";
-import Container from "./Container";
+import Card from "./Card";
 
 interface AddressAvailabilityProps {
     totalFreeAddresses: number,
@@ -22,8 +22,8 @@ const AddressAvailability = ({ totalFreeAddresses, totalAllocatedAddresses, }: A
     ];
 
     return (
-        <Container className="flex flex-col items-center w-fit">
-            <Container.title text="Address Availability" />
+        <Card className="flex flex-col items-center w-fit">
+            <Card.title text="Address Availability" />
 
             <GuidPieChart data={data} className="size-48 flex flex-1 ">
                 <span className="text-xl font-bold text-primary-text">
@@ -48,7 +48,7 @@ const AddressAvailability = ({ totalFreeAddresses, totalAllocatedAddresses, }: A
                     ))}
                 </ul>
             </div>
-        </Container>
+        </Card>
     );
 };
 

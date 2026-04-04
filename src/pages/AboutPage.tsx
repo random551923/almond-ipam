@@ -1,8 +1,8 @@
-import Container from "../components/Container";
+import Card from "../components/Card";
 
 const AboutPage = () => {
   return (
-    <Container className="flex flex-col h-full gap-1 text-primary-text">
+    <Card className="flex flex-col h-full gap-1 text-primary-text">
       <h1 className="text-3xl font-bold mb-6">Introduction</h1>
       <p className="">
         ALMOND IP address management (IPAM) helps you effectively monitor your IP address space,
@@ -30,7 +30,7 @@ const AboutPage = () => {
       <div className="flex flex-col flex-1 justify-end">
         <a href="/test" className="text-secondary-text underline hover:text-primary-text w-fit h-fit">Learn More....</a>
       </div>
-    </Container>
+    </Card>
   );
 };
 
