@@ -8,6 +8,7 @@ import BaseLayout from "./layouts/BaseLayout";
 import SidebarLayout from "./layouts/SidebarLayout";
 import ErrorPage from "./pages/ErrorPage";
 import LoginPage from './pages/LoginPage';
+import SubnetDetailsPage from "./pages/SubnetDetailsPage";
 
 const router = createBrowserRouter([
     // Public routes - without auth and sidebar
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
                 path: "/login",
                 element: <LoginPage />,
             },
-            
+
         ]
     },
 
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
             {
                 path: '/subnets',
                 element: <SubnetsPage />
+            },
+            {
+                path: "/subnets/:subnetAddress",
+                element: <SubnetDetailsPage/>
             },
             {
                 path: '/about',

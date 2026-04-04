@@ -1,6 +1,7 @@
-import { ChevronsUpDown } from "lucide-react";
+import { ChevronsRight, ChevronsUpDown } from "lucide-react";
 import { cn } from "../utils/cn";
 import UsageBar from "./UsageBar";
+import { Link } from "react-router-dom";
 
 interface Column {
   Header: string;
@@ -12,10 +13,10 @@ interface TableProps {
   data: any[],
   className?: string,
   sort?: boolean,
-  actions?: React.ReactNode,
+  moreKey?: string, // key for more details about the object
 }
 
-const Table = ({ columns, data, className, sort, actions }: TableProps) => {
+const Table = ({ columns, data, className, sort, moreKey }: TableProps) => {
   return (
     <div className={cn("overflow-x-auto bg-container-bg-transparent rounded-lg min-h-96", className)}>
       <table className="w-full text-primary-text">
@@ -27,7 +28,7 @@ const Table = ({ columns, data, className, sort, actions }: TableProps) => {
                 {sort && <ChevronsUpDown size={16} />}
               </TableHeder>
             ))}
-            {actions && (<TableHeder key="actions"></TableHeder>)}
+            {moreKey && (<TableHeder key="more"></TableHeder>)}
           </tr>
         </thead>
         <tbody className="py-4">
@@ -40,8 +41,8 @@ const Table = ({ columns, data, className, sort, actions }: TableProps) => {
                     (row[column.accessor])}
                 </TableItem>
               ))}
-              {actions && (
-                <TableItem key="actions" className="w-px ">{actions}</TableItem>
+              {moreKey && (
+                <MoreButton objectID={row[moreKey]}/>
               )}
             </tr>
           ))}
@@ -68,5 +69,16 @@ const TableHeder = ({ children, className }: { children?: React.ReactNode; class
     </th>
   );
 };
+
+
+const MoreButton = ({ objectID }: { objectID: string }) => {
+  return (
+    <TableItem key="more" className="w-px">
+      <Link  to={`/subnets/${objectID}`}>
+        < ChevronsRight />
+      </Link >
+    </TableItem>
+  );
+}
 
 export default Table;
