@@ -15,12 +15,20 @@ interface Subnet {
   allocated_ips_percent: number,
 }
 
-/* Convert row data to array of subnets & format it */
+/* Convert Subnets row data to array of subnets & format it */
 const formatSubnetsData = (rowData: Record<string, Subnet>) => {
     return Object.entries(rowData).map(([address, fullSubnet]) => ({
         address: address,
         fullAddress: address + "/" + fullSubnet.subnet_cidr,
         ...fullSubnet
+    }));
+};
+
+/* Convert Addresses row data to array of Addresses & format it */
+const formatAddressesData = (rowData: Record<string, Ip>) => {
+    return Object.entries(rowData).map(([address, fullAddress]) => ({
+        address: address,
+        ...fullAddress
     }));
 };
 
@@ -51,4 +59,4 @@ const countTotalAddresses = (subnetsList: Subnet[]) => {
 };
 
 
-export { formatSubnetsData, countTotalAddresses, type Subnet };
+export { formatSubnetsData, countTotalAddresses, formatAddressesData, type Subnet, type Ip};
