@@ -22,7 +22,7 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
                 <ul>{children}</ul>
             </nav>
 
-            <div className={cn("py-4 gap-2 flex flex-col", expanded ? "items-start px-3" : "items-center")}>
+            <div className={cn("py-4 gap-2 flex flex-col text-md", expanded ? "items-start px-3" : "items-center")}>
                 <LogoutButton />
                 <ThemeSwitch />
             </div>

@@ -11,12 +11,6 @@
 @layer base {
 
     :root {
-        font-size: 18px;
-
-
-        @media (max-width: 1400px) {
-            font-size: 16px;
-        }
 
         /* Color configuration */
         --color-primary-50: #FEDEBE;

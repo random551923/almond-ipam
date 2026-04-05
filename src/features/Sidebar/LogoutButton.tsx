@@ -8,7 +8,7 @@ const LogoutButton = () => {
     return (
         <Link to="/" className="p-1 flex rounded-md items-center justify-center text-sid-bar-secondary-text hover:bg-sid-bar-haver-bg">
             
-            <span className={cn("overflow-hidden transition-all duration-500 whitespace-nowrap text-sm",
+            <span className={cn("overflow-hidden  whitespace-nowrap ",
                     expanded ? "w-auto opacity-100 mr-3" : "w-0 opacity-0 ml-0")}>
                 Logout
             </span>

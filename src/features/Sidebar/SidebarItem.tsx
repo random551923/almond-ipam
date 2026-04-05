@@ -18,7 +18,7 @@ const SidebarItem = ({ icon, text, link }: SidebarItemProps) => {
       {({ isActive }) => (
         <li
           className={cn(
-            "group relative flex items-center border-transparent p-4 my-2 text-md cursor-pointer rounded-md transition-all duration-500 text-sid-bar-primary-text hover:bg-sid-bar-haver-bg justify-start",
+            "group relative flex items-center border-transparent p-4 my-2 text-lg cursor-pointer rounded-md transition-all duration-500 text-sid-bar-primary-text hover:bg-sid-bar-haver-bg justify-start",
             {
               "bg-sid-bar-active-bg ": isActive,
               "border-primary ": isActive && expanded,

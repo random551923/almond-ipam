@@ -10,7 +10,7 @@ const ThemeSwitch = () => {
 
     return (
         <div className="px-1 flex items-center justify-center">
-            <span className={cn(" text-sid-bar-secondary-text overflow-hidden transition-all duration-500 whitespace-nowrap text-sm",
+            <span className={cn(" text-sid-bar-secondary-text overflow-hidden whitespace-nowrap",
                 expanded ? "w-auto opacity-100 mr-3" : "w-0 opacity-0 mr-0")}>
                 {theme === "dark" ? "Dark" : "Light"} Mode
             </span>

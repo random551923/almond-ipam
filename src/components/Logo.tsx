@@ -7,7 +7,7 @@ export default function Logo({ expanded }: { expanded?: boolean; }) {
             <LogoIcon  className={'size-10'} />
             <div className={cn("flex flex-col font-logo transition-all duration-500 ease-in-out overflow-hidden",
                 expanded ? " w-auto opacity-100 ml-2 " : "max-w-0 opacity-0 ml-0")} >
-                <span className="text-2xl leading-none">ALMOND</span>
+                <span className="text-3xl leading-none">ALMOND</span>
                 <span className="text-md leading-none ">IP MANAGEMENT</span>
             </div>
         </div>
