@@ -2,6 +2,7 @@ import { ChevronsRight, ChevronsUpDown } from "lucide-react";
 import { cn } from "../utils/cn";
 import UsageBar from "./UsageBar";
 import { Link } from "react-router-dom";
+import type { Subnet } from "../utils/dataUtils";
 
 interface Column {
   Header: string;
@@ -10,7 +11,7 @@ interface Column {
 
 interface TableProps {
   columns: Column[]
-  data: any[],
+  data: Subnet[],
   className?: string,
   sort?: boolean,
   moreKey?: string, // key for more details about the object
