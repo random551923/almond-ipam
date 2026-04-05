@@ -13,7 +13,7 @@ interface TableProps {
   columns: Column[]
   data: Subnet[],
   className?: string,
-  sort?: boolean,
+  sort?: boolean,  
   moreKey?: string, // key for more details about the object
 }
 
